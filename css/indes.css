@@ -66,6 +66,10 @@ li{
     
 }
 
-.fahrenheit{
+a{
     text-decoration: none;
+    cursor: default;
+}
+.active{
+    color: black;
 }
