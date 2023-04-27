@@ -15,14 +15,49 @@ function formatDate(timestamp){
 }
 
 
+function displayForecast(){
+    let forecastElement = document.querySelector('#forecast');
+
+    let forecastHtml = `<div class="row">`
+    let days = ['Thu','Fri','Sat','Sun','Mon','Tue','Wed']
+    days.forEach(function(day){
+
+         forecastHtml = forecastHtml + `
+      
+                    <div class="col-2">
+                        <div class="weather-forecast-date">
+                         ${day}
+                        </div>
+                       <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="" width="36">
+                       <div class="weather-forecast-temp">
+                          <span class="weather-forecast-temp-max">
+                            18°
+                          </span>
+                          <span class="weather-forecast-temp-min">
+                            12°
+                          </span>
+                        </div>
+                    </div> 
+     `;
+
+    })
+   
+    
+    forecastElement.innerHTML = forecastHtml
+
+    
+}
+
 
 function displayTemperature(response){
-    let dateElement =  document.querySelector('#time')
-    let iconElement = document.querySelector('#icon')
-    let tempElement = document.querySelector('#temp')
+    let dateElement =  document.querySelector('#time');
+    let iconElement = document.querySelector('#icon');
+    let tempElement = document.querySelector('#temp');
+
+    
 
     dateElement.innerHTML = formatDate(response.data.dt * 1000); //converts timestamp into milliseconds
-    iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}04d@2x.png`) 
+    iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}04d@2x.png`) ;
     iconElement.setAttribute("alt", response.data.weather[0].description); 
     tempElement.innerHTML = Math.round(response.data.main.temp);
 
@@ -77,6 +112,7 @@ function displayCelsiusTemp(event){
  
 let celsiusTemp = null;
 
+displayForecast()
 
 let form = document.querySelector('#search-form');
 form.addEventListener('submit', handleSubmit);
