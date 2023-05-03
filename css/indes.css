@@ -1,68 +1,105 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(rgb(47,150,163),rgb(160, 174, 255));
+    
+    
 }
 
 h1{
-    color: #878787;
+    color: #FFEBEB;
     display: block;
     font-weight: bolder;
     height: 28px;
     line-height: 28.8px;
-    text-align: left;
-    font-size: 24px;
-    margin-bottom: 0;
+    text-align: center;
+    font-size: 50px;
+    padding: 0;
+    margin-top:0;
+    
 }
 
 ul{
     padding: 0;
     margin: 0;
+    margin-bottom: 30px;
+    display: inline;
+    
 }
 
 li{
+    
     list-style: none;
     margin: 0;
     padding: 0;
-    color: rgb(135, 135, 135);
-    font-size: 16px;
+    color:rgba(249, 234, 234, 0.713);
+    font-size: 18px;
     font-weight: 600;
+    
 }
 .weather-app-wrapper{
-    max-width: 600px;
-     margin: 30px auto;
+    max-width: 500px;
+    margin: 30px auto;
+     
+    
 
 }
 
 .weather-app {
     padding: 20px;
-    border: 1px solid rgb(70, 65, 65);
-    border-radius: 5px;
+    
+    
 }
 
 .overview{
-    margin-bottom: 20px;
+
+    margin-top: 50px;
+    
 
 }
-
-.weather-temp img{
-    margin-right: 20px;
-    height: 64px;
-    width: 64px;
-    float: left;
+.clearfix{
+    margin-top: 20px;
+}
+.weather-temp{
+    margin-top: 20px;
+    margin-left: 40px;
+    padding: 0;
+    
+    
 }
 
-.weather-temp span strong{
+
+.img{
+   
+    
+    height: 180px;
+    margin-bottom: 0;
+    padding: 0;
+    padding-bottom: 40px;
+    
+    
+ 
+    
+    
+}
+
+
+.float-left  strong{
     color: rgb(33, 33, 33);
-    font-size: 64px;
+    font-size: 100px;
     font-weight: 500;
     line-height: 1;
+    
+    
+    
 
 }
 
-.weather-temp .units{
+.units{
     position: relative;
     font-size: 18px;
-    top: -34px;
+    top: -60px;
     font-weight: 600;
+    
     
 }
 
@@ -74,20 +111,53 @@ a{
     color: black;
 }
 
-.weather-forecast{
-    margin-top: 20px;
+
+.container{
+    margin-bottom: 400px;
+    align-items: center;
+   
+}
+
+.fahrenheit{
+    color: #FFEBEB;
+}
+
+.humidity-icon{
+    width: 20px;
+    display: inline;
+}
+.wind-icon{
+    width: 20px;
+    display: inline;
+}
+.humidity-wind{
+    
     text-align: center;
-    color: black;
 }
 
-.weather-forecast-date{
-    font-size: 16px;
-    opacity: 0.6;
-}
-.weather-forecast-temp-min{
-    opacity: 0.6;
+#time{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: rgba(249, 234, 234, 0.713);
+    font-size: 18px;
+    font-weight: 600;
 }
 
-.weather-forecast-temp{
-    font-size: 16px;
+#description{
+    text-align: center;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.446);
+    
+    
+
+}
+.open-source-code{
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.669);
+}
+.source-code:hover{
+
+    color:rgba(255, 255, 255, 0.847) ;
+
 }

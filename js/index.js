@@ -10,60 +10,12 @@ function formatDate(timestamp){
     if (minutes < 10){
         minutes = `0${minutes}`
     }
-    let days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday",]
     let day = days[date.getDay()]
     return `${day}: ${hours}:${minutes}`;
 }
 
-//Updating daily weather using Shecodes weather API
-function displayForecast(response){
-    
-    let forecast = getForecast()
-    let forecastElement = document.querySelector('#forecast');
 
-    let forecastHtml = `<div class="row">`
-    let days = ['Thu','Fri','Sat','Sun','Mon','Tue','Wed']
-    days.forEach(function(day){
-
-         forecastHtml = forecastHtml + `
-      
-                    <div class="col-2">
-                        <div class="weather-forecast-date">
-                         ${day}
-                        </div>
-                       <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="" width="36">
-                       <div class="weather-forecast-temp">
-                          <span class="weather-forecast-temp-max">
-                            18°
-                          </span>
-                          <span class="weather-forecast-temp-min">
-                            12°
-                          </span>
-                        </div>
-                    </div> 
-     `;
-
-    })
-   
-    
-    forecastElement.innerHTML = forecastHtml
-
-    
-}
-
-//Calling another API
-function getForecast(coordinates){
-    let city = 'New york'
-    let apiKey = '244a93ab1a7fc45d4c80b97bta5af4bo';
-    let apiUrl = fetch(`https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`)
-    .then(res => res.json())
-    .then(data => console.log(data))
-    axios.get(apiUrl).then(displayForecast)
-
-
-   
-    
-}
 
 //Change the innerHtml to the respective weather details in the weather API
 function displayTemperature(response){
@@ -83,15 +35,15 @@ function displayTemperature(response){
 
 
     document.querySelector('#description').innerHTML = response.data.weather[0].description;
-    document.querySelector('#humidity').innerHTML= 'humidity: '+response.data.main.humidity + '%';
-    document.querySelector('#wind').innerHTML= 'wind: ' +response.data.wind.speed +'km/h';
-    document.querySelector('#precipitation').innerHTML = ' ';
+    document.querySelector('#humidity').innerHTML= ' humidity: '+response.data.main.humidity + '%';
+    document.querySelector('#wind').innerHTML= ' wind: ' +response.data.wind.speed +'km/h';
+    
    
 
-    getForecast(response.data.coord);
+    
 
 
-    console.log(response.data)
+    //console.log(response.data)
 }
 
 //call weather API
@@ -101,6 +53,8 @@ function search(city){
     
     
   axios.get(apiUrl).then(displayTemperature);
+
+   
 
 }
 
@@ -139,7 +93,7 @@ function displayCelsiusTemp(event){
  
 let celsiusTemp = null;
 
-displayForecast()
+
 
 let form = document.querySelector('#search-form');
 form.addEventListener('submit', handleSubmit);
