@@ -26,6 +26,8 @@ Open Weather API
 You can check current weather by searching the city.
 It shows chosen city name, day of the week, time, temperature, humidity, wind, description of the weather and weather icon.
 
+<h2>screenshot</h2>
+![image](https://github.com/19Amy/vanilla-weather-project/assets/118280231/7cf3852b-045b-446a-9ed1-3a07c63403ca)
 
 
 <h2>Project status</h2>
